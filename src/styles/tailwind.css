@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Colors */
+    --color-primary: #2D5A27; /* Deep forest green */
+    --color-primary-50: #F0F4F0; /* Very light green */
+    --color-primary-100: #D9E5D7; /* Light green */
+    --color-primary-200: #B8D1B3; /* Medium light green */
+    --color-primary-300: #8FB587; /* Medium green */
+    --color-primary-400: #6A9A5F; /* Medium dark green */
+    --color-primary-500: #4A7C59; /* Secondary green */
+    --color-primary-600: #2D5A27; /* Primary green */
+    --color-primary-700: #234520; /* Dark green */
+    --color-primary-800: #1A3319; /* Very dark green */
+    --color-primary-900: #0F1F0E; /* Darkest green */
+    --color-primary-foreground: #FFFFFF; /* white */
+
+    /* Secondary Colors */
+    --color-secondary: #4A7C59; /* Balanced growth green */
+    --color-secondary-50: #F1F5F2; /* Very light secondary */
+    --color-secondary-100: #DCE7DF; /* Light secondary */
+    --color-secondary-200: #C2D4C6; /* Medium light secondary */
+    --color-secondary-300: #9BB8A1; /* Medium secondary */
+    --color-secondary-400: #739A7C; /* Medium dark secondary */
+    --color-secondary-500: #4A7C59; /* Secondary */
+    --color-secondary-600: #3E6649; /* Dark secondary */
+    --color-secondary-700: #325139; /* Very dark secondary */
+    --color-secondary-800: #263C2A; /* Darkest secondary */
+    --color-secondary-900: #1A281C; /* Deepest secondary */
+    --color-secondary-foreground: #FFFFFF; /* white */
+
+    /* Accent Colors */
+    --color-accent: #7FB069; /* Fresh progress green */
+    --color-accent-50: #F4F8F2; /* Very light accent */
+    --color-accent-100: #E5F0E1; /* Light accent */
+    --color-accent-200: #CCE1C4; /* Medium light accent */
+    --color-accent-300: #A8CFA0; /* Medium accent */
+    --color-accent-400: #93C085; /* Medium dark accent */
+    --color-accent-500: #7FB069; /* Accent */
+    --color-accent-600: #6B9456; /* Dark accent */
+    --color-accent-700: #577843; /* Very dark accent */
+    --color-accent-800: #435C30; /* Darkest accent */
+    --color-accent-900: #2F401D; /* Deepest accent */
+    --color-accent-foreground: #FFFFFF; /* white */
+
+    /* Background Colors */
+    --color-background: #FAFBFA; /* Clean canvas */
+    --color-surface: #F5F7F5; /* Subtle depth */
+    --color-card: #FFFFFF; /* white */
+    --color-popover: #FFFFFF; /* white */
+    --color-muted: #F5F7F5; /* Subtle depth */
+    --color-muted-foreground: #4A5A4A; /* Clear hierarchy */
+
+    /* Text Colors */
+    --color-foreground: #1A1D1A; /* Strong readability */
+    --color-text-primary: #1A1D1A; /* Strong readability */
+    --color-text-secondary: #4A5A4A; /* Clear hierarchy */
+
+    /* Status Colors */
+    --color-success: #6B8E23; /* Natural achievement */
+    --color-success-50: #F3F6ED; /* Very light success */
+    --color-success-100: #E4EBD4; /* Light success */
+    --color-success-200: #CDD8B0; /* Medium light success */
+    --color-success-300: #A8BE7A; /* Medium success */
+    --color-success-400: #8AA64F; /* Medium dark success */
+    --color-success-500: #6B8E23; /* Success */
+    --color-success-600: #5A771E; /* Dark success */
+    --color-success-700: #486019; /* Very dark success */
+    --color-success-800: #364914; /* Darkest success */
+    --color-success-900: #24320F; /* Deepest success */
+    --color-success-foreground: #FFFFFF; /* white */
+
+    --color-warning: #D2691E; /* Earthy urgency */
+    --color-warning-50: #FDF5F0; /* Very light warning */
+    --color-warning-100: #FAE7D9; /* Light warning */
+    --color-warning-200: #F4D0B3; /* Medium light warning */
+    --color-warning-300: #EAB082; /* Medium warning */
+    --color-warning-400: #DE8F51; /* Medium dark warning */
+    --color-warning-500: #D2691E; /* Warning */
+    --color-warning-600: #B05719; /* Dark warning */
+    --color-warning-700: #8E4514; /* Very dark warning */
+    --color-warning-800: #6C340F; /* Darkest warning */
+    --color-warning-900: #4A230A; /* Deepest warning */
+    --color-warning-foreground: #FFFFFF; /* white */
+
+    --color-error: #B22222; /* Helpful concern */
+    --color-error-50: #F9F0F0; /* Very light error */
+    --color-error-100: #F2DADA; /* Light error */
+    --color-error-200: #E6B5B5; /* Medium light error */
+    --color-error-300: #D48585; /* Medium error */
+    --color-error-400: #C35454; /* Medium dark error */
+    --color-error-500: #B22222; /* Error */
+    --color-error-600: #951D1D; /* Dark error */
+    --color-error-700: #781818; /* Very dark error */
+    --color-error-800: #5B1313; /* Darkest error */
+    --color-error-900: #3E0E0E; /* Deepest error */
+    --color-error-foreground: #FFFFFF; /* white */
+
+    /* Destructive (alias for error) */
+    --color-destructive: #B22222; /* Helpful concern */
+    --color-destructive-foreground: #FFFFFF; /* white */
+
+    /* Border Colors */
+    --color-border: #E5E9E5; /* Subtle border */
+    --color-input: #E5E9E5; /* Input border */
+    --color-ring: #7FB069; /* Focus ring accent */
+
+    /* Conversion Colors */
+    --color-conversion: #FF6B35; /* Energetic orange */
+    --color-conversion-50: #FFF4F0; /* Very light conversion */
+    --color-conversion-100: #FFE4D9; /* Light conversion */
+    --color-conversion-200: #FFC4B3; /* Medium light conversion */
+    --color-conversion-300: #FF9B82; /* Medium conversion */
+    --color-conversion-400: #FF8351; /* Medium dark conversion */
+    --color-conversion-500: #FF6B35; /* Conversion */
+    --color-conversion-600: #E55A2B; /* Dark conversion */
+    --color-conversion-700: #CC4921; /* Very dark conversion */
+    --color-conversion-800: #B23817; /* Darkest conversion */
+    --color-conversion-900: #99270D; /* Deepest conversion */
+    --color-conversion-foreground: #FFFFFF; /* white */
+
+    /* Trust Colors */
+    --color-trust: #4A7C59; /* Trust builder sage */
+    --color-trust-foreground: #FFFFFF; /* white */
+
+    /* Radius */
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .font-accent {
+    font-family: 'Fira Code', 'Courier New', monospace;
+  }
+
+  /* Custom animations */
+  @keyframes breathe {
+    0%, 100% { transform: scale(1.0); }
+    50% { transform: scale(1.02); }
+  }
+
+  @keyframes pulse-radial {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(2); opacity: 0; }
+  }
+
+  @keyframes count-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-breathe {
+    animation: breathe 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-radial {
+    animation: pulse-radial 2s ease-out infinite;
+  }
+
+  .animate-count-up {
+    animation: count-up 0.5s ease-out;
+  }
+
+  /* Scroll animations */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Custom shadows */
+  .shadow-organic {
+    box-shadow: 0 4px 12px rgba(45, 90, 39, 0.1);
+  }
+
+  .shadow-layered {
+    box-shadow: 0 1px 3px rgba(45, 90, 39, 0.12), 0 1px 2px rgba(45, 90, 39, 0.24);
+  }
+
+  /* Gradient overlays */
+  .gradient-green-overlay {
+    background: linear-gradient(rgba(45, 90, 39, 0.1), rgba(45, 90, 39, 0.1));
+  }
+
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: all 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .transition-reveal {
+    transition: all 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+}
